@@ -1,0 +1,31 @@
+//Desenvolva um programa em C utilizando registro que permita a entrada de nome, endereço e telefone 
+//de 3 pessoas e os imprima ao final.
+
+#include <stdio.h>
+typedef struct cadastro {
+    char nome[20];
+    char end[50];
+    char telefone[11];
+}cadastro;
+void main()
+{
+int i;
+    cadastro c[3];
+    for (i=0; i<3; i++)
+    {
+        printf("\n Digite seu Nome: ");
+        scanf("%s", &c[i].nome);
+        printf("\n Digite seu Endereco: ");
+        scanf("%s", &c[i].end);
+        printf("\n Digite seu Telefone: ");
+        scanf("%s", &c[i].telefone);
+    }
+    for (i=0; i<3; i++)
+    {
+        printf("\n Nome: %s", c[i].nome);
+        printf("\n Endereco: %s", c[i].end);
+        printf("\n Telefone: %s", c[i].telefone);
+        printf("\n\n");
+    }
+getch();
+}
