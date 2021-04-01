@@ -1,0 +1,13 @@
+// Escreva as instruções necessárias para definir um tipo de ESTRUTURA 
+//que contenha 2 elementos, uma “STRING” de 10 caracteres e um INTEIRO utilizando a função struct:
+
+	struct MinhaEstrutura{
+		char minhaString[10];
+		int meuInteiro;
+	};
+	
+int main(void){
+	
+
+
+}
