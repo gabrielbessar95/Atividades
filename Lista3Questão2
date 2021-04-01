@@ -1,0 +1,30 @@
+//Criar um registro chamado DadosAluno, que armazene o nome e idade de um aluno.
+//Na função main: criar uma variável que é uma estrutura DadosAluno; ler o nome e a idade
+//de um aluno e armazenar na variável criada; exibir na tela o nome do aluno e a idade do aluno.
+
+#include<stdio.h>
+ struct DadosAluno{
+	char nome[25], idade[3];	
+};
+int main(){
+	
+	struct DadosAluno dados[3];
+	int i;
+	
+	printf("\nDADOS:\n");
+	for(i=0;i<3;i++){		
+		printf("\nInforme o nome do %i%c aluno:", i+1,167);
+		fgets(dados[i].nome,25,stdin);
+		fflush(stdin);
+		printf("Informe a idade do %i%c aluno:", i+1,167);
+		fgets(dados[i].idade, 3, stdin);
+		fflush(stdin);		
+	}
+		
+	printf("\nIMPRESSAO:\n");
+	for(i=0;i<3;i++){		
+		printf("\nO nome do %i%c aluno:%s\n", i+1,167,dados[i].nome);		
+		printf("A idade do %i%c aluno:%s\n", i+1,167,dados[i].idade);	
+		
+	}				
+}
