@@ -1,31 +1,39 @@
-//Desenvolva um programa em C utilizando registro que permita a entrada de nome, endereço e telefone 
-//de 3 pessoas e os imprima ao final.
+// Desenvolva um programa em C utilizando registro que permita a entrada de nome, endereço e telefone de 3 pessoas e os imprima ao final.
 
-#include <stdio.h>
-typedef struct cadastro {
-    char nome[20];
-    char end[50];
-    char telefone[11];
-}cadastro;
-void main()
-{
-int i;
-    cadastro c[3];
-    for (i=0; i<3; i++)
-    {
-        printf("\n Digite seu Nome: ");
-        scanf("%s", &c[i].nome);
-        printf("\n Digite seu Endereco: ");
-        scanf("%s", &c[i].end);
-        printf("\n Digite seu Telefone: ");
-        scanf("%s", &c[i].telefone);
-    }
-    for (i=0; i<3; i++)
-    {
-        printf("\n Nome: %s", c[i].nome);
-        printf("\n Endereco: %s", c[i].end);
-        printf("\n Telefone: %s", c[i].telefone);
-        printf("\n\n");
-    }
-getch();
+#include<stdio.h>
+
+struct cadastro{
+	char nome[25], endereco[100], telefone[11];	
+};
+void entrada_dados (struct cadastro cad[3]);
+void imprime_dados(struct cadastro cad[3]);
+main(){
+struct cadastro cad[3];		
+	entrada_dados(cad);
+	imprime_dados(cad);	
+}
+
+void entrada_dados(struct cadastro cad [3]){
+	int i;
+	printf("\nDADOS DAS PESSOAS:\n");
+	for(i=0;i<3;i++){
+			printf("\nInforme o nome:");
+			fgets(cad[i].nome,20,stdin);
+			fflush(stdin);
+			printf("Informe o endereco:");
+			fgets(cad[i].endereco, 100, stdin);
+			fflush(stdin);
+			printf("Informe o telefone:");
+			fgets(cad[i].telefone, 11, stdin);
+			fflush(stdin);
+	}	
+}
+void imprime_dados(struct cadastro cad [3]){
+	int i;
+	for(i=0;i<3;i++){
+		printf("\nIMPRESSAO:\n");	
+			printf("\nNome...........:%s",cad[i].nome);
+			printf("Endereco.......:%s",cad[i].endereco);	
+			printf("Telefone.......:%s",cad[i].telefone);	
+		}
 }
